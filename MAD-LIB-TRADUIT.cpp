@@ -16,7 +16,7 @@ int main()
 {
 
     cout << "Benvingut a Mad Lib, la historia personalitzada." << endl;
-    cout << "Quin idioma voldras?." << endl;
+    cout << "Quin idioma voldras? Pots triar un dels seguents:" << endl;
 
     ifstream fich("Traduccio.txt");
     int NumIdiomes, NumParaules;
