@@ -10,7 +10,7 @@ void mostra_vector(const vector<string>&);
 string askText(string q);// String per preguntar text al jugador.
 int askNumber(string q);// String per preguntar un numero al jugador.
 void TellStory(string name, string noun, int number, string bodyPart, string verb);// Void on s'explica l'historia.
-string idiomaactual = "CA";
+string idiomaactual = "CA";//LLenguatge actual per defecte en catala.
 
 int main()
 {
