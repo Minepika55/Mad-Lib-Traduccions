@@ -50,13 +50,13 @@ int main()
     string salut;//Faig un string que guardara el salut en si.
 
     while (getline(fich2, salut)) {
-        if (salut.find(idiomaactual) == 0) {
-            cout << salut.substr(idiomaactual.length()) << endl;
+        if (salut.find(idiomaactual) == 0) {//Faig que el document busqui l'idioma escollit.
+            cout << salut.substr(idiomaactual.length()) << endl;//Si l'ha trobat mostra la salutacio del narrador per pantalla.
             break;
         }
     }
 
-    fich2.close();
+    fich2.close();//Tenco el segon fitxer.
 
     cout << "Avui presentem una historia d'accio, necessito unes quantes dades." << endl;
 
