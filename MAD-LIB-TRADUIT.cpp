@@ -10,7 +10,7 @@ void mostra_vector(const vector<string>&);
 string askText(string q);// String per preguntar text al jugador.
 int askNumber(string q);// String per preguntar un numero al jugador.
 void TellStory(string name, string noun, int number, string bodyPart, string verb);// Void on s'explica l'historia.
-char idiomaactual;
+string idiomaactual = "CA";
 
 int main()
 {
@@ -44,15 +44,22 @@ int main()
 
     cin >> idiomaactual;
 
-    for (int i = 0; i < NumIdiomes; ++i)
-    {
-        find(llengues.begin());
+    ifstream fich2("Traduccio2.txt");
+    
+    string salut;
 
+    while (getline(fich2, salut)) {
+        if (salut.find(idiomaactual) == 0) {
+            cout << salut.substr(idiomaactual.length()) << endl;
+            break;
+        }
     }
 
+    fich2.close();
 
 
-    
+
+
     cout << "Avui presentem una historia d'accio, necessito unes quantes dades." << endl;
 
     // Faig preguntes a l'usuari.
