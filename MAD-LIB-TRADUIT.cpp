@@ -15,10 +15,10 @@ string idiomaactual = "CA";
 int main()
 {
 
-    cout << "Benvingut a Mad Lib, la historia personalitzada." << endl;
-    cout << "Quin idioma voldras? Pots triar un dels seguents:" << endl;
+    cout << "Benvingut a Mad Lib, un programa per crear la teva propia historia personalitzada." << endl;
+    cout << "Quin idioma voldras? Pots triar un dels seguents:" << endl;// Demano al jugador quin idioma vol.
 
-    ifstream fich("Traduccio.txt");
+    ifstream fich("Traduccio.txt");//Obro el fitxer amb els idiomes.
     int NumIdiomes, NumParaules;
     fich >> NumIdiomes;
     fich >> NumParaules;
@@ -27,26 +27,27 @@ int main()
     vector <string> frases;
 
     llengues.reserve(NumIdiomes);
-    for (int i = 0; i < NumIdiomes; ++i)
+    for (int i = 0; i < NumIdiomes; ++i)//Vaig llegint tots els idiomes del fitxer.
     {
         string valor;
         fich >> valor;
-        llengues.push_back(valor);
-        for (int i = 0; i < NumParaules - 1; ++i)
+        llengues.push_back(valor);//Els guardo en un valor.
+        
+        for (int i = 0; i < NumParaules - 1; ++i)//Ara ho faig un segon cop per la resta d'idiomes.
         {
             string valor;
             fich >> valor;
-            frases.push_back(valor);
+            frases.push_back(valor);//Els guardo en un valor.
         }
 
     }
-    mostra_vector(llengues);
+    mostra_vector(llengues);//Mostro per pantalla tots els idiomes a escollir,
 
-    cin >> idiomaactual;
+    cin >> idiomaactual;//Guardo l'idioma que ha triat el jugador.
 
-    ifstream fich2("Traduccio2.txt");
+    ifstream fich2("Traduccio2.txt");//Obro el fitxer amb el salut del narrador amb les seves traducions corresponents.
     
-    string salut;
+    string salut;//Faig un string que guardara el salut en si.
 
     while (getline(fich2, salut)) {
         if (salut.find(idiomaactual) == 0) {
@@ -56,9 +57,6 @@ int main()
     }
 
     fich2.close();
-
-
-
 
     cout << "Avui presentem una historia d'accio, necessito unes quantes dades." << endl;
 
